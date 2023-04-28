@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saas
+spec:
+  selector:
+    matchLabels:
+      app: saas
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: saas
+    spec:
+      containers:
+      - name: saas
+        image: emmanuelo/flask-app:1.6
+        ports:
+        - containerPort: 8080
