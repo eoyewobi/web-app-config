@@ -1,19 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  creationTimestamp: null
+  labels:
+    app: saas
   name: saas
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: saas
-  replicas: 4
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: saas
     spec:
       containers:
-      - name: saas
-        image: emmanuelo/flask-app:1.6
-        ports:
-        - containerPort: 5000
+      - image: emmanuelo/flask-app:1.6
+        name: saas
+        resources: {}
+status: {}
