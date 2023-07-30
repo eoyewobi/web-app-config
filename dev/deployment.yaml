@@ -18,7 +18,7 @@ spec:
         app: saas
     spec:
       containers:
-      - image: emmanuelo/flask-app:1.6
+      - image: emmanuelo/flask-app:latest
         name: saas
         resources: {}
 status: {}
